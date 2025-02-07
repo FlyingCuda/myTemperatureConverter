@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.two.HelloController">
+   <children>
+      <AnchorPane fx:id="anchorPane" layoutX="56.0" layoutY="64.0" prefHeight="336.0" prefWidth="544.0" style="-fx-background-color: #222222; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 3; -fx-border-color: #ff9700; -fx-border-style: dashed;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
+         <children>
+
+            <HBox layoutX="159.0" layoutY="36.0" prefHeight="51.0" prefWidth="367.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 2; -fx-border-color: #06e8f8; -fx-border-style: dotted;" AnchorPane.bottomAnchor="253.0" AnchorPane.leftAnchor="159.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="36.0">
+               <children>
+                  <RadioButton fx:id="buttonFromCelsius" mnemonicParsing="false" onAction="#getUnit" prefHeight="59.0" prefWidth="105.0" text="Celsius" textFill="#ff9700">
+                     <font>
+                        <Font name="DejaVu Sans Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="initial_unit" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="buttonFromFahrenheit" mnemonicParsing="false" onAction="#getUnit" prefHeight="72.0" prefWidth="127.0" text="Fahrenheit" textFill="#ff9700" toggleGroup="$initial_unit">
+                     <font>
+                        <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="buttonFromKelvin" mnemonicParsing="false" onAction="#getUnit" prefHeight="47.0" prefWidth="78.0" text="Kelvin" textAlignment="JUSTIFY" textFill="#ff9700" toggleGroup="$initial_unit">
+                     <font>
+                        <Font name="DejaVu Serif Condensed Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox layoutX="24.0" layoutY="157.0" prefHeight="42.0" prefWidth="358.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 2; -fx-border-color: #06e8f8; -fx-border-style: dotted;" AnchorPane.bottomAnchor="134.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="157.0">
+               <children>
+                  <RadioButton fx:id="buttonToCelsius" mnemonicParsing="false" onAction="#getUnitTo" prefHeight="59.0" prefWidth="105.0" text="Celsius" textFill="#ff9700">
+                     <font>
+                        <Font name="DejaVu Sans Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="target_unit" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="buttonToFahrenheit" mnemonicParsing="false" onAction="#getUnitTo" prefHeight="72.0" prefWidth="127.0" text="Fahrenheit" textFill="#ff9700" toggleGroup="$target_unit">
+                     <font>
+                        <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="buttonToKelvin" mnemonicParsing="false" onAction="#getUnitTo" prefHeight="47.0" prefWidth="78.0" text="Kelvin" textAlignment="JUSTIFY" textFill="#ff9700" toggleGroup="$target_unit">
+                     <font>
+                        <Font name="DejaVu Serif Condensed Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Button fx:id="convert_button" layoutX="402.0" layoutY="96.0" mnemonicParsing="false" onAction="#converting" prefHeight="104.0" prefWidth="116.0" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-width: 2; -fx-border-radius: 30; -fx-border-color: #ff9700;" text="Convert" textFill="#ff9700" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="399.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="96.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Label layoutX="32.0" layoutY="205.0" prefHeight="18.0" prefWidth="467.0" text="You are converting" textFill="#06e8f8">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="37.0" layoutY="239.0" prefHeight="64.0" prefWidth="467.0">
+               <children>
+                  <Text fx:id="text_value" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="text_unitFrom" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fill="#07ebf7" strokeType="OUTSIDE" strokeWidth="0.0" text="=&gt;">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="text_result" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="text_unitTo" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <TextField fx:id="enter_temp" layoutX="162.0" layoutY="101.0" onAction="#getValue" prefHeight="38.0" prefWidth="220.0" promptText="enter temperature..." style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-image-width: 3; -fx-border-color: #ff9700; -fx-prompt-text-fill: #ff9700; -fx-text-fill: #06e8f8;" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="162.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="101.0" />
+            <Label layoutX="177.0" layoutY="12.0" prefHeight="28.0" prefWidth="62.0" text="from:" textFill="#06e8f8" />
+            <Label layoutX="43.0" layoutY="134.0" prefHeight="28.0" prefWidth="62.0" text="to:" textFill="#06e8f8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Text fx:id="boobs" fill="#1dc0e1" layoutX="212.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="( . )( . )  ( . )( . )  ( . )( . )  ( . )( . )  ( . )( . ) " textAlignment="CENTER" visible="false" wrappingWidth="297.13000106811523">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <CheckBox fx:id="activate_boobs" layoutX="479.0" layoutY="12.0" mnemonicParsing="false" onAction="#make_boobs_appear" style="-fx-background-color: #222222;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="logoPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222222; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 3; -fx-border-color: #06e8f8; -fx-border-style: dotted;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="#06e8f8" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Converter">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text fill="#06e8f8" layoutX="42.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature" textAlignment="CENTER" wrappingWidth="116.13000106811523">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="58.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/temp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="message_pane" layoutX="336.0" layoutY="22.0" opacity="0.89" prefHeight="32.0" prefWidth="231.0" style="-fx-background-color: #222222; -fx-border-radius: 30; -fx-background-radius: 30;" visible="false">
+         <children>
+            <Label layoutX="9.0" layoutY="7.0" prefHeight="18.0" prefWidth="182.0" text="grab boobs to move window" textFill="#00d9eb" />
+            <Button fx:id="message_exit" layoutX="192.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#close_message" prefHeight="18.0" prefWidth="18.0" text="X" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
