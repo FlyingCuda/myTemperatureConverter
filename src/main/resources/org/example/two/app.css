@@ -1,0 +1,60 @@
+
+
+/**Costumization of Buttons**/
+.button{
+   -fx-background-color:#1a1a1a;
+   -fx-background-radius: 30;
+   -fx-text-fill:#06e8f8;
+   -fx-wrap-text: true;
+   -fx-effect: dropshadow( three-pass-box, #06e8f8, 10.0, 0.0, 0.0, 0.0);
+   -fx-cursor:hand;
+ }
+
+.button:hover{
+    -fx-background-color:#ff9700;
+    -fx-text-fill:#06e8f8;
+    -fx-font-weight:bold;
+ }
+
+#convert_button{
+    -fx-text-fill:#06e8f8;
+    -fx-effect: dropshadow( three-pass-box, #ff9700, 10.0, 0.0, 0.0, 0.0);
+    -fx-cursor:hand;}
+
+#boobs{
+    -fx-cursor:OPEN_HAND;}
+
+
+
+.check-box .box {
+-fx-background-color:#1a1a1a;
+-fx-border-color:#ff9700;
+-fx-border-radius:3px;
+}
+
+.check-box:selected .mark {
+-fx-background-color:#06e8f8;
+}
+
+.check-box:selected .box {
+-fx-background-color:#ff9700;
+}
+
+.radio-button .radio {
+-fx-background-color:#1a1a1a;
+-fx-border-color:#ff9700;
+-fx-border-radius:50px;
+}
+
+.radio-button:selected .dot {
+-fx-background-color:#ff9700;
+
+
+}
+
+.radio-button:selected .radio {
+-fx-background-color:transparent;
+-fx-border-color:#06e8f8;
+-fx-border-radius:50px;
+-fx-effect: dropshadow( three-pass-box, #ff9700, 10.0, 0.0, 0.0, 0.0);
+}

@@ -4,19 +4,20 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-
+import javafx.stage.Stage;
 
 
 public class HelloController {
 
 
 
-    private String unit;
-    private String unitTo;
+    private String unit = ConversionService.CELSIUS;
+    private String unitTo = ConversionService.FAHRENHEIT;
     private String celsius;
     private String fahrenheit;
     private String kelvin;
@@ -44,6 +45,7 @@ public class HelloController {
 
     @FXML
     private Text boobs;
+
 
     @FXML
     private AnchorPane anchorPane;
@@ -96,6 +98,45 @@ public class HelloController {
 
     @FXML
     private Text text_value;
+
+    @FXML
+    private Button exit;
+
+    public void initialize() {
+        anchorPane.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        anchorPane.setOnMouseDragged(event -> {
+            anchorPane.getScene().getWindow().setX(event.getScreenX() - xOffset);
+            anchorPane.getScene().getWindow().setY(event.getScreenY() - yOffset);
+        });
+
+        text_unitFrom.setText("C'");
+
+        enter_temp.textProperty().addListener((observable, oldValue, newValue) -> {
+            text_value.setText("");
+            text_result.setText("");
+
+        });
+
+        initial_unit.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
+            text_result.setText("");
+        } );
+
+        target_unit.selectedToggleProperty().addListener((observableValue, toggle, t1) -> {
+            text_result.setText("");
+        });
+
+        text_unitFrom.setText("C°");
+        text_unitFrom.setVisible(true);
+        text_unitTo.setText("F°");
+        text_unitTo.setVisible(true);
+
+
+    }
+
 
     @FXML
     void close_message(MouseEvent event) {
@@ -164,49 +205,37 @@ public class HelloController {
     @FXML
     void converting(ActionEvent event) {
         double result = conversionService.getResult(unit, Double.parseDouble(enter_temp.getText()), unitTo);
+
+
         text_value.setVisible(true);
         value = Double.parseDouble(enter_temp.getText());
         text_value.setText(String.valueOf(value));
-        text_result.setText(String.valueOf(result));
+        text_result.setText(String.format("%.2f", result));
         text_result.setVisible(true);
 
 
 
     }
 
+    Stage stage;
     @FXML
-    void anchorPane (MouseEvent event) {
-        anchorPane.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                xOffset = event.getSceneX();
-                yOffset = event.getSceneY();
-
-            }
-        });
-
-        anchorPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                HelloApplication.getPrimaryStage().setX(event.getScreenX() - xOffset);
-                HelloApplication.getPrimaryStage().setY(event.getScreenY() - yOffset);
-            }
-        });
+    public void toExit(MouseEvent event) {
 
 
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource("alerts.css").toExternalForm());
+        dialogPane.getStyleClass().add("alert");
+        alert.setTitle("EXIT");
+        alert.setHeaderText("I am so sorry you're finally leaving.");
+        alert.setContentText("Do you want to exit?");
+
+        if(alert.showAndWait().get() == ButtonType.OK){
+            stage = (Stage) anchorPane.getScene().getWindow();
+            stage.close();
+        }
 
     }
-
-    /*@FXML
-    void mainPane(MouseEvent event) {
-        mainPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                mainPane.setX(event.getScreenX() - xOffset);
-                mainPane.setY(event.getScreenY() - yOffset);
-            }
-        });*/
-
     }
 
 

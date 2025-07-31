@@ -17,14 +17,14 @@
 
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.two.HelloController">
    <children>
-      <AnchorPane fx:id="anchorPane" layoutX="56.0" layoutY="64.0" prefHeight="336.0" prefWidth="544.0" style="-fx-background-color: #222222; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 3; -fx-border-color: #ff9700; -fx-border-style: dashed;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
+      <AnchorPane fx:id="anchorPane" layoutX="56.0" layoutY="64.0" prefHeight="400.0" prefWidth="544.0" style="-fx-background-color: #222222; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 3; -fx-border-color: #ff9700; -fx-border-style: dashed;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
          <children>
 
             <HBox layoutX="159.0" layoutY="36.0" prefHeight="51.0" prefWidth="367.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 2; -fx-border-color: #06e8f8; -fx-border-style: dotted;" AnchorPane.bottomAnchor="253.0" AnchorPane.leftAnchor="159.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="36.0">
                <children>
-                  <RadioButton fx:id="buttonFromCelsius" mnemonicParsing="false" onAction="#getUnit" prefHeight="59.0" prefWidth="105.0" text="Celsius" textFill="#ff9700">
+                  <RadioButton fx:id="buttonFromCelsius" mnemonicParsing="false" onAction="#getUnit" prefHeight="59.0" prefWidth="105.0" selected="true" text="Celsius" textFill="#ff9700">
                      <font>
-                        <Font name="DejaVu Sans Bold" size="13.0" />
+                        <Font name="DejaVu Serif Condensed Bold" size="13.0" />
                      </font>
                      <HBox.margin>
                         <Insets left="20.0" />
@@ -35,7 +35,7 @@
                   </RadioButton>
                   <RadioButton fx:id="buttonFromFahrenheit" mnemonicParsing="false" onAction="#getUnit" prefHeight="72.0" prefWidth="127.0" text="Fahrenheit" textFill="#ff9700" toggleGroup="$initial_unit">
                      <font>
-                        <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+                        <Font name="DejaVu Serif Condensed Bold" size="13.0" />
                      </font>
                   </RadioButton>
                   <RadioButton fx:id="buttonFromKelvin" mnemonicParsing="false" onAction="#getUnit" prefHeight="47.0" prefWidth="78.0" text="Kelvin" textAlignment="JUSTIFY" textFill="#ff9700" toggleGroup="$initial_unit">
@@ -52,7 +52,7 @@
                <children>
                   <RadioButton fx:id="buttonToCelsius" mnemonicParsing="false" onAction="#getUnitTo" prefHeight="59.0" prefWidth="105.0" text="Celsius" textFill="#ff9700">
                      <font>
-                        <Font name="DejaVu Sans Bold" size="13.0" />
+                        <Font name="DejaVu Serif Condensed Bold" size="13.0" />
                      </font>
                      <HBox.margin>
                         <Insets left="20.0" />
@@ -61,9 +61,9 @@
                         <ToggleGroup fx:id="target_unit" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="buttonToFahrenheit" mnemonicParsing="false" onAction="#getUnitTo" prefHeight="72.0" prefWidth="127.0" text="Fahrenheit" textFill="#ff9700" toggleGroup="$target_unit">
+                  <RadioButton fx:id="buttonToFahrenheit" mnemonicParsing="false" onAction="#getUnitTo" prefHeight="72.0" prefWidth="127.0" selected="true" text="Fahrenheit" textFill="#ff9700" toggleGroup="$target_unit">
                      <font>
-                        <Font name="DejaVu Sans Condensed Bold" size="13.0" />
+                        <Font name="DejaVu Serif Condensed Bold" size="13.0" />
                      </font>
                   </RadioButton>
                   <RadioButton fx:id="buttonToKelvin" mnemonicParsing="false" onAction="#getUnitTo" prefHeight="47.0" prefWidth="78.0" text="Kelvin" textAlignment="JUSTIFY" textFill="#ff9700" toggleGroup="$target_unit">
@@ -76,7 +76,7 @@
                   </RadioButton>
                </children>
             </HBox>
-            <Button fx:id="convert_button" layoutX="402.0" layoutY="96.0" mnemonicParsing="false" onAction="#converting" prefHeight="104.0" prefWidth="116.0" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-width: 2; -fx-border-radius: 30; -fx-border-color: #ff9700;" text="Convert" textFill="#ff9700" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="399.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="96.0">
+            <Button fx:id="convert_button" layoutX="402.0" layoutY="96.0" mnemonicParsing="false" onAction="#converting" prefHeight="104.0" prefWidth="116.0" text="Convert" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="399.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="96.0">
                <font>
                   <Font size="19.0" />
                </font>
@@ -86,53 +86,58 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER" layoutX="37.0" layoutY="239.0" prefHeight="64.0" prefWidth="467.0">
+            <HBox alignment="CENTER" layoutX="18.0" layoutY="233.0" prefWidth="518.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="233.0">
                <children>
-                  <Text fx:id="text_value" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
-                  </Text>
-                  <Text fx:id="text_unitFrom" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
-                  </Text>
-                  <Text fill="#07ebf7" strokeType="OUTSIDE" strokeWidth="0.0" text="=&gt;">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
-                  </Text>
-                  <Text fx:id="text_result" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
-                  </Text>
-                  <Text fx:id="text_unitTo" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
-                  </Text>
+                  <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="204.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fx:id="text_value" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="177.29999542236328" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="30.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fx:id="text_unitFrom" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="34.29999542236328" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="63.0" prefWidth="50.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <image>
+                              <Image url="@../../../assets/arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" fillHeight="false" prefHeight="60.0" prefWidth="204.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fx:id="text_result" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="195.29999542236328" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="30.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fx:id="text_unitTo" fill="#ff9700" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="34.29999542236328" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
                </children>
             </HBox>
-            <TextField fx:id="enter_temp" layoutX="162.0" layoutY="101.0" onAction="#getValue" prefHeight="38.0" prefWidth="220.0" promptText="enter temperature..." style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-image-width: 3; -fx-border-color: #ff9700; -fx-prompt-text-fill: #ff9700; -fx-text-fill: #06e8f8;" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="162.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="101.0" />
-            <Label layoutX="177.0" layoutY="12.0" prefHeight="28.0" prefWidth="62.0" text="from:" textFill="#06e8f8" />
-            <Label layoutX="43.0" layoutY="134.0" prefHeight="28.0" prefWidth="62.0" text="to:" textFill="#06e8f8">
+            <TextField fx:id="enter_temp" layoutX="162.0" layoutY="101.0" onAction="#getValue" prefHeight="38.0" prefWidth="220.0" promptText="enter temperature..." style="-fx-background-color: #1a1a1a; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-image-width: 3; -fx-border-color: #ff9700; -fx-prompt-text-fill: #ff9700; -fx-text-fill: #06e8f8;" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="162.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="101.0" />
+            <Label layoutX="177.0" layoutY="12.0" prefHeight="28.0" prefWidth="62.0" text="from:" textFill="#06e8f8" AnchorPane.bottomAnchor="293.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="302.0" AnchorPane.topAnchor="12.0" />
+            <Label layoutX="43.0" layoutY="134.0" prefHeight="28.0" prefWidth="62.0" text="to:" textFill="#06e8f8" AnchorPane.bottomAnchor="174.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="131.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -143,21 +148,22 @@
                </font>
             </Text>
             <CheckBox fx:id="activate_boobs" layoutX="479.0" layoutY="12.0" mnemonicParsing="false" onAction="#make_boobs_appear" style="-fx-background-color: #222222;" />
+            <Button fx:id="exit" layoutX="452.0" layoutY="294.0" mnemonicParsing="false" onMouseClicked="#toExit" prefHeight="28.0" prefWidth="63.0" text="exit" textFill="#06e8f8" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="logoPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222222; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-width: 3; -fx-border-color: #06e8f8; -fx-border-style: dotted;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fill="#06e8f8" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Converter">
+            <Text fill="#06e8f8" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Converter" AnchorPane.bottomAnchor="134.2259979248047" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="56.694000244140625" AnchorPane.topAnchor="26.136999130249023">
                <font>
                   <Font size="27.0" />
                </font>
             </Text>
-            <Text fill="#06e8f8" layoutX="42.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature" textAlignment="CENTER" wrappingWidth="116.13000106811523">
+            <Text fill="#06e8f8" layoutX="48.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature" textAlignment="CENTER" wrappingWidth="126.30599975585938" AnchorPane.bottomAnchor="158.48399925231934" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="22.694000244140625" AnchorPane.topAnchor="13.757999420166016">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="58.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="58.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="76.0">
                <image>
                   <Image url="@../../../assets/temp.png" />
                </image>
